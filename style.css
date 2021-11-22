@@ -1,8 +1,16 @@
+* {
+    box-sizing: border-box;
+}
 html {
     font-size: 14px;
     color: #222;
     -webkit-text-size-adjust: 100%;
 }
+
+@media screen and (max-width: 767px){
+html {
+    font-size: 15px;
+}}
 
 body, div, p, ul, ol, li, dl, dt, dd, table, th, td, img, figure, h1, h2, h3, h4, h5, h6, form, select {
     margin: 0;
@@ -16,6 +24,7 @@ div{
 body {
     font-family: "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
     font-weight: 400;
+    -webkit-font-smoothing: antialiased;
 }
 
 header{
@@ -26,11 +35,19 @@ header{
     display: block;
 } 
 
-@media screen and (max-width: 1080px)
+@media screen and (max-width: 1080px){
 header{
     background-color: #fff;
     position: fixed;
     z-index: 10;
+}}
+
+.header-base {
+    max-width: 100%;
+    margin: 0 36px 0 36px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
 }
 
 .potepan>.potepan-pc {
@@ -42,18 +59,10 @@ header{
     display: none;
 }
 
-.header-base{
-    max-width: 100%;
-    margin: 0 36px 0 36px;
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-}
-
-@media screen and (min-width: 768px)
+@media screen and (min-width: 768px){
 .potepan {
     transition: opacity 0.2s;
-}
+}}
 
 a {
     color: #222;
@@ -63,16 +72,28 @@ a {
 .tag{
     align-items: center;
     display: flex;
-    justify-content: space-between;
     list-style: none;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-    padding-inline-start: 40px;
+    justify-content: space-between;
 }
 
-li{
+@media screen and (max-width: 1080px) {
+.tag {
+    overflow-y: scroll;
+    position: fixed;
+    top: 60px;
+    left: 100%;
+    width: 100%;
+    display: block;
+    padding-top: 20px;
+    padding-bottom: 75px;
+    transition: transform 0.5s;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.8);
+    -webkit-overflow-scrolling: touch;
+    height: 100%;
+}}
+
+.tag-outline {
     margin-right: 45px;
     display: list-item;
 }
@@ -83,12 +104,16 @@ li{
     text-align: center;
 }
 
-.tag-menu>span:first-child {
+header .tag-menu>span:first-child {
     font-family: 'Lato', sans-serif;
 }
 
-.tag1-menu>span:last-child {
+.tag-menu>span:last-child {
     font-size: 10px;
+}
+
+.tag6 {
+    width: fit-content;
 }
 
 .tag6-counsering {
@@ -108,23 +133,27 @@ li{
     border: none;
 }
 
-@media screen and (max-width: 1080px)
-.header-nav-hamburger {
+.tag-hamburger {
+    display: none;
+}
+
+@media screen and (max-width: 1080px){
+.tag-hamburger {
     cursor: pointer;
     display: block;
     position: relative;
     width: 30px;
     height: 21px;
     z-index: 100;
-}
+}}
 
-@media screen and (max-width: 1080px)
-.header-nav-hamburger-line:first-child {
+@media screen and (max-width: 1080px){
+.tag-hamburger-line:first-child {
     top: 0;
-}
+}}
 
-@media screen and (max-width: 1080px)
-.header-nav-hamburger-line {
+@media screen and (max-width: 1080px){
+.tag-hamburger-line {
     position: absolute;
     top: 50%;
     display: block;
@@ -134,4 +163,258 @@ li{
     transform: translate(0, -50%);
     border-radius: 10px;
     transition: top 0.2s, transform 0.2s, opacity 0.3s;
+}}
+
+@media screen and (max-width: 1080px) {
+.tag-hamburger-line:last-child {
+    top: 100%;
+}}
+
+.firstview{
+    background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-top: 100px;
+    padding-bottom: 28px;
+}
+
+.firstview_main-image-sp {
+    display: none;
+    width: 100%;
+}
+
+@media screen and (max-width: 767px){
+.firstview_main-image-sp {
+    display: block;
+}}
+
+.firstviewcontent {
+    max-width: 1140px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;}
+
+.firstview_contain {
+    margin-bottom: 70px;
+    width: fit-content;
+}
+
+.firstview_container-title {
+    color: #333333;
+    font-family: 'Lato', sans-serif;
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 54px;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.firstview_container-title h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+}
+
+.firstview-logo {
+    margin-bottom: 25px;
+}
+
+.firstview-logo image {
+    margin-right: 8px;
+}
+
+.firstview-logo image :nth-of-type(2) {
+    width: 40%;
+}
+
+.firstview-logo image :last-of-type {
+    margin-right: 0;
+}
+
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+.firstview-content-button {
+    display: flex;
+}
+
+.firstview-content-button a {
+    align-items: center;
+    background-color: #F79214;
+    border: none;
+    border-radius: 38px;
+    color: #fff;
+    cursor: pointer;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 700;
+    height: 64px;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+    height: 64px;
+}
+
+.firstview-content-button a:first-of-type {
+    margin-right: 15px;
+    width: 306px;
+}
+
+.firstview-content-button a:last-of-type {
+    background-color: #fff;
+    border: 1px solid #E0E0E0;
+    color: #333333;
+    width: 176px;
+}
+
+@media screen and (min-width: 768px){
+.firstview-content-button a {
+    transition: opacity 0.2s;
+}}
+
+@media screen and (max-width: 767px) {
+.firstview-content-button a {
+    font-size: 14px;
+    width: 100% !important;
+}}
+
+@media screen and (max-width: 767px) {
+.firstview-content-button a:first-of-type {
+    margin-right: 0;
+    margin-bottom: 10px;
+}}
+
+@media screen and (max-width: 767px) {
+.firstview-content-button a:last-of-type {
+    height: 45px;
+}}
+
+.firstview-text {
+    color: #A2A2A4;
+    font-size: 12px;
+}
+
+p {
+    line-height: 1.5;
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+.mainsection {
+    background-color: #f79314;
+    padding: 45px 0;
+}
+
+.mainsection .about-text {
+    align-items: center;
+}
+
+.about-text {
+    display: flex;
+    max-width: 1140px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    justify-content: space-between;
+}
+
+@media screen and (max-width: 1024px){
+.about-text {
+    flex-direction: column;
+    width: 100%;
+}}
+
+@media screen and (max-width: 767px) {
+.about-text {
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+}}
+
+@media screen and (max-width: 767px) {
+.about-text-sentence h2>span {
+    font-size: 30px;
+}}
+
+@media screen and (max-width: 767px) {
+.about-text-setence h2 {
+    font-size: 26px;
+    text-align: center;
+}}
+
+@media screen and (max-width: 1024px){
+.about-text-sentence {
+    width: 100%;
+}}
+
+@media screen and (max-width: 767px) {
+.about-text-sentence {
+    width: 100%;
+}}
+
+.about-text-sentence {
+    color: #fff;
+    width: 53%;
+}
+
+.about-text-tag {
+    width: 250px;
+    color: #f79314;
+    background-color: #fff;
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    cursor: pointer;
+    border-radius: 30px;
+    text-decoration: none;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+    height: 60px;
+    font-size: 20px;
+    border: none;
+}
+
+.about-text-sentence h2 {
+    font-size: 40px;
+    letter-spacing: 1px;
+}
+
+.about-text-sentence h2>span {
+    font-size: 50px;
+    font-family: 'Lato', sans-serif;
+    font-weight: 900;
+}
+
+.about-text-tag span:first-child {
+    letter-spacing: 4px;
+    line-height: 1.3;
+    font-family: 'Lato', sans-serif;
+}
+
+.about-text-tag span:last-child {
+    font-size: 12px;
+}
+
+.about-text-text {
+    color: #fff;
+    font-weight: 700;
+    margin-top: 15px;
+    line-height: 26px;
 }
