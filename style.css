@@ -64,6 +64,18 @@ header{
     transition: opacity 0.2s;
 }}
 
+@media screen and (max-width: 767px) {
+.potepan>.potepan-pc {
+    display: none;
+}}
+
+@media screen and (max-width: 767px) {
+.potepan>.potepan-sp {
+    display: inline-block;
+    width: auto;
+    height: 16px;
+}}
+
 a {
     color: #222;
     text-decoration: none;
@@ -170,7 +182,7 @@ header .tag-menu>span:first-child {
     top: 100%;
 }}
 
-.firstview{
+.firstview {
     background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
     background-size: cover;
     background-position: center;
@@ -178,17 +190,24 @@ header .tag-menu>span:first-child {
     padding-bottom: 28px;
 }
 
-.firstview_main-image-sp {
+@media screen and (max-width: 767px) {
+.firstview {
+    background-image: none;
+    padding-top: 0;
+    padding-bottom: 35px;
+}}
+
+.firstview-main-image-sp {
     display: none;
     width: 100%;
 }
 
 @media screen and (max-width: 767px){
-.firstview_main-image-sp {
+.firstview-main-image-sp {
     display: block;
 }}
 
-.firstviewcontent {
+.firstview-content {
     max-width: 1140px;
     padding-left: 50px;
     padding-right: 50px;
@@ -196,12 +215,18 @@ header .tag-menu>span:first-child {
     margin-right: auto;
     position: relative;}
 
-.firstview_contain {
+.firstview-contain {
     margin-bottom: 70px;
     width: fit-content;
 }
 
-.firstview_container-title {
+@media screen and (max-width: 767px) {
+.firstview-contain {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.firstview-container-title {
     color: #333333;
     font-family: 'Lato', sans-serif;
     font-size: 38px;
@@ -211,7 +236,7 @@ header .tag-menu>span:first-child {
     text-align: center;
 }
 
-.firstview_container-title h2 {
+.firstview-container-title h2 {
     display: block;
     font-size: 1.5em;
     margin-block-start: 0.83em;
@@ -220,6 +245,14 @@ header .tag-menu>span:first-child {
     margin-inline-end: 0px;
     font-weight: bold;
 }
+
+@media screen and (max-width: 767px) {
+.firstview-container-title {
+    font-size: 25px;
+    line-height: 36px;
+    margin-left: calc(((100vw - 100%) / 2) * -1);
+    margin-right: calc(((100vw - 100%) / 2) * -1);
+}}
 
 .firstview-logo {
     margin-bottom: 25px;
@@ -247,6 +280,7 @@ img {
 }
 
 .firstview-content-button a {
+    display: flex;
     align-items: center;
     background-color: #F79214;
     border: none;
@@ -261,7 +295,6 @@ img {
     text-decoration: none;
     text-align: center;
     width: 100%;
-    height: 64px;
 }
 
 .firstview-content-button a:first-of-type {
