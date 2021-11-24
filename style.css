@@ -182,6 +182,11 @@ header .tag-menu>span:first-child {
     top: 100%;
 }}
 
+@media screen and (max-width: 1080px) {
+main {
+    padding-top: 60px;
+}}
+
 .firstview {
     background-image: url(https://camp.potepan.com/wp-content/themes/potepancamp/assets/images/home/first-view/top-hero.jpg);
     background-size: cover;
@@ -213,7 +218,16 @@ header .tag-menu>span:first-child {
     padding-right: 50px;
     margin-left: auto;
     margin-right: auto;
-    position: relative;}
+    position: relative;
+}
+
+@media screen and (max-width: 767px){
+.firstview-content {
+    margin-top: -45vw;
+    max-width: none;
+    padding-left: 20px;
+    padding-right: 20px;
+}}
 
 .firstview-contain {
     margin-bottom: 70px;
@@ -224,7 +238,7 @@ header .tag-menu>span:first-child {
 .firstview-contain {
     margin-bottom: 20px;
     width: 100%;
-}
+}}
 
 .firstview-container-title {
     color: #333333;
@@ -258,17 +272,22 @@ header .tag-menu>span:first-child {
     margin-bottom: 25px;
 }
 
-.firstview-logo image {
+.firstview-logo img {
     margin-right: 8px;
 }
 
-.firstview-logo image :nth-of-type(2) {
+.firstview-logo img:nth-of-type(2) {
     width: 40%;
 }
 
-.firstview-logo image :last-of-type {
+.firstview-logo img:last-of-type {
     margin-right: 0;
 }
+
+@media screen and (max-width: 767px){
+.firstview-logo img {
+    width: 27.5%;
+}}
 
 img {
     border: 0;
@@ -331,9 +350,18 @@ img {
     height: 45px;
 }}
 
+@media screen and (max-width: 767px){
+.firstview-content-button {
+    flex-direction: column;
+}}
+
 .firstview-text {
     color: #A2A2A4;
     font-size: 12px;
+}
+
+.firstview-text a {
+    color: #A2A2A4 ;
 }
 
 p {
@@ -381,18 +409,18 @@ p {
 
 @media screen and (max-width: 767px) {
 .about-text-sentence h2>span {
-    font-size: 30px;
+    font-size: 30px !important;
 }}
 
 @media screen and (max-width: 767px) {
-.about-text-setence h2 {
-    font-size: 26px;
+.about-text-sentence h2 {
+    font-size: 26px !important;
     text-align: center;
 }}
 
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 1024px) {
 .about-text-sentence {
-    width: 100%;
+    width: 100% !important;
 }}
 
 @media screen and (max-width: 767px) {
@@ -445,9 +473,9 @@ p {
     font-size: 12px;
 }
 
-.about-text-text {
-    color: #fff;
+.about-text-text  {
     font-weight: 700;
     margin-top: 15px;
     line-height: 26px;
+    color: #ffffff;
 }
